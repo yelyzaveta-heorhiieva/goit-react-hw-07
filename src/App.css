@@ -53,3 +53,10 @@ button {
   text-align: center;
   font-size: 40px;
 }
+
+.spinner {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+}
