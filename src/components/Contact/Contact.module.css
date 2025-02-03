@@ -1,0 +1,20 @@
+.text {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+  max-width: 160px;
+}
+
+.span {
+  overflow-wrap: break-word;
+  width: 140px;
+}
+
+.deleteBtn {
+  padding: 6px;
+  border-radius: 4px;
+  background-color: orangered;
+  color: white;
+  min-width: 80px;
+  height: 40px;
+}
