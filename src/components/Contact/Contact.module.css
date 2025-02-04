@@ -2,19 +2,35 @@
   display: flex;
   gap: 10px;
   margin-bottom: 8px;
-  max-width: 160px;
+  max-width: 200px;
 }
 
 .span {
   overflow-wrap: break-word;
-  width: 140px;
+  width: 180px;
 }
 
-.deleteBtn {
+.btnList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn {
   padding: 6px;
   border-radius: 4px;
-  background-color: orangered;
+  background-color: green;
   color: white;
-  min-width: 80px;
-  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s linear;
+  &:hover {
+    background-color: orangered;
+  }
+}
+
+.icon {
+  height: 26px;
+  width: 26px;
 }

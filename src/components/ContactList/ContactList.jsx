@@ -7,14 +7,18 @@ const ContactList = () => {
   const contacts = useSelector(selectContacts)
   const visibleContacts = useSelector(selectFilteredContacts);
 
+  if (!contacts.length) {
+    return <p className={s.error}>There are no contacts yet.</p>
+  }
+
   return (
     <>
-      {contacts.length > 0 ? <ul className={s.list}>
-          {visibleContacts.map(contact =>
-              <li key={contact.id} className={s.item}>
-                  <Contact data={contact} />
+      <ul className={s.list}>
+        {visibleContacts.map(contact =>
+          <li key={contact.id} className={s.item}>
+            <Contact data={contact} />
           </li>)}
-      </ul> : <p className={s.error}>There are no contacts yet.</p>}
+      </ul> 
     </>
   )
 }

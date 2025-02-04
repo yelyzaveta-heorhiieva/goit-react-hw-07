@@ -4,11 +4,12 @@ import * as Yup from "yup";
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from '../../redux/contactsOps';
 import toast from 'react-hot-toast';
-import { selectContacts } from '../../redux/selectors';
+import { selectContacts, selectLoading } from '../../redux/selectors';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
+  const loading = useSelector(selectLoading);
 
   const initialValues = {
         name: '',
@@ -32,7 +33,7 @@ const ContactForm = () => {
   
     
   const handleNumberChange = (value) => {
-     return  value = `${value.slice(0, 3)}-${value.slice(3, 6)}-${value.slice(6, 10)}`;
+     return `${value.slice(0, 3)}-${value.slice(3, 6)}-${value.slice(6, 10)}`;
   };
   
     const FeedbackSchema = Yup.object().shape({
@@ -53,7 +54,7 @@ const ContactForm = () => {
             <Field className={s.input} type="tel" name="number" />
             <ErrorMessage className={s.error} name="number" component="span" />
           </label>
-          <button className={s.btn} type="submit">Add contact</button>
+          <button className={s.btn} type="submit" disabled={loading}>Add contact</button>
           </Form>
         </Formik>
         

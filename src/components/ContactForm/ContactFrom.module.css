@@ -17,7 +17,7 @@
   border-radius: 4px;
   background-color: rgb(171, 53, 230);
   font-weight: 600;
-  transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear, transform 0.4s linear;
   &:hover {
     background-color: rgb(153, 0, 255);
     transform: scale(1.1);

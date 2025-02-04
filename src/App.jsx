@@ -7,6 +7,7 @@ import './App.css'
 import { fetchContacts } from './redux/contactsOps';
 import { Hourglass } from "react-loader-spinner";
 import { selectError, selectLoading } from "./redux/selectors";
+import EditForm from "./components/EditForm/EditForm";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <SearchBox />
       { loading && !error && <Hourglass wrapperClass='spinner' colors={['#008000', '#66FF00']}/>}
       {!loading && <ContactList />}
+      <EditForm/>
     </div>
   )
 }
